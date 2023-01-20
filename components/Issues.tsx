@@ -100,7 +100,7 @@ FORMAT JSON`,
   if (!data) return <div>Loading...</div>
 
   const chartData = data.data
-  const max = parseInt(toString(findMax(chartData, 'tally')))
+  const max = parseInt(findMax(chartData, 'tally').toString())
 
   return (
     <Card>
