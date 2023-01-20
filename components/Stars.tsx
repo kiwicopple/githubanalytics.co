@@ -40,10 +40,12 @@ FORMAT JSON`,
   // console.log("data", data)
   // console.log("error", error)
 
-  if (!data) return <div>Loading...</div>
+  if (!data || !data.data) return <div>Loading...</div>
 
   const starHistory = data.data
-  const max = parseInt(starHistory[starHistory.length - 1]["stars"])
+  const max = starHistory.length
+    ? parseInt(starHistory[starHistory.length - 1]["stars"])
+    : 0
   return (
     <Card>
       <div className="md:flex justify-between">

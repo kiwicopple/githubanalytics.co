@@ -16,11 +16,13 @@ export const useUrlFilters = (): UrlFilters => {
 }
 
 // Find the max value from an array of objects (or just an array of numbers)
-export function findMax(objects: any[], key?: string) {
+export function findMax(objects: any[], key?: string): number {
   let max = 0
   for (let i = 0; i < objects.length; i++) {
-    const val = key? objects[i][key]:  objects[i]
-    if (val > max) max = val
+    const val: number = key ? objects[i][key] : objects[i]
+    const valInt = parseInt(val.toString())
+    if (valInt > max) max = valInt
   }
+  console.log("max", max)
   return max
 }
