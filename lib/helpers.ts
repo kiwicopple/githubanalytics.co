@@ -14,3 +14,13 @@ export const useUrlFilters = (): UrlFilters => {
   }
   return filters
 }
+
+// Find the max value from an array of objects (or just an array of numbers)
+export function findMax(objects: any[], key?: string) {
+  let max = 0
+  for (let i = 0; i < objects.length; i++) {
+    const val = key? objects[i][key]:  objects[i]
+    if (val > max) max = val
+  }
+  return max
+}

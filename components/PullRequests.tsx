@@ -10,7 +10,7 @@ import {
   ToggleItem,
 } from "@tremor/react"
 import useSWR from "swr"
-import { fetcher, useUrlFilters } from "../lib/helpers"
+import { fetcher, useUrlFilters, findMax } from "../lib/helpers"
 
 // Basic formatters for the chart values
 const dollarFormatter = (value: number) =>
@@ -99,7 +99,7 @@ FORMAT JSON`,
   if (!data) return <div>Loading...</div>
 
   const chartData = data.data
-  const max = parseInt(chartData[chartData.length - 1]["tally"]) * 1.2
+  const max = parseInt(findMax(chartData, 'tally')) 
 
   return (
     <Card>
