@@ -3,6 +3,7 @@ import { Block, Card, ColGrid, Tab, TabList, Text, Title } from "@tremor/react"
 import Stars from "./Stars"
 import Issues from "./Issues"
 import Navbar from "./Navbar"
+import PullRequests from "./PullRequests"
 import { useRouter } from "next/router"
 
 export default function KpiCardGrid() {
@@ -16,6 +17,9 @@ export default function KpiCardGrid() {
           </Block>
           <Block marginTop="mt-6">
             <Issues />
+          </Block>
+          <Block marginTop="mt-6">
+            <PullRequests />
           </Block>
         </>
       </main>
