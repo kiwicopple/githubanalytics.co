@@ -33,6 +33,7 @@ events as (
     SELECT *
     FROM github_events
     WHERE repo_name like '${filters.org}/%' and event_type = 'IssuesEvent'
+    order by created_at asc
 ),
 timeseries as (
     WITH
@@ -99,7 +100,7 @@ FORMAT JSON`,
   if (!data) return <div>Loading...</div>
 
   const chartData = data.data
-  const max = parseInt(findMax(chartData, 'tally')) 
+  const max = parseInt(toString(findMax(chartData, 'tally')))
 
   return (
     <Card>
