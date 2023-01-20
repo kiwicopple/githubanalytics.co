@@ -108,9 +108,9 @@ FORMAT JSON`,
             spaceX="space-x-0.5"
             alignItems="items-center"
           >
-            <Title>Issue History</Title>
+            <Title>Pull Requests</Title>
           </Flex>
-          <Text>Issue growth across all repos</Text>
+          <Text>Pull Requests across all repos</Text>
         </Block>
         <div className="mt-6 md:mt-0">
           <Toggle
