@@ -99,6 +99,8 @@ FORMAT JSON`,
   if (!data) return <div>Loading...</div>
 
   const chartData = data.data
+  const max = parseInt(chartData[chartData.length - 1]["tally"]) * 1.2
+
   return (
     <Card>
       <div className="md:flex justify-between">
@@ -134,6 +136,7 @@ FORMAT JSON`,
         yAxisWidth="w-14"
         height="h-96"
         marginTop="mt-8"
+        maxValue={selectedKpi == "tally" ? max : undefined}
       />
     </Card>
   )
