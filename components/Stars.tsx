@@ -24,7 +24,7 @@ export default function ChartView() {
         body: `
 WITH data AS (
   select * from github_events
-  WHERE repo_name like '${filters.org}/%' AND event_type = 'WatchEvent'
+  WHERE repo_name ilike '${filters.org}/%' AND event_type = 'WatchEvent'
 )
 SELECT
   count(actor_login) as daily,

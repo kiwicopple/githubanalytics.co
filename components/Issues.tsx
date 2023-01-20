@@ -32,7 +32,7 @@ with
 events as (
     SELECT *
     FROM github_events
-    WHERE repo_name like '${filters.org}/%' and event_type = 'IssuesEvent'
+    WHERE repo_name ilike '${filters.org}/%' and event_type = 'IssuesEvent'
     order by created_at asc
 ),
 timeseries as (
